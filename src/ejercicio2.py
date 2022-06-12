@@ -6,6 +6,9 @@
 Enunciado del ejercicio
 """
 def cargador():
+    """
+    Función que crea la secuencia a trabajar
+    """
     print("""Ingrese '0' para cortar la secuencia""")
     secuencia = list()
     numero = None
@@ -17,6 +20,9 @@ def cargador():
 
 
 def minimo(secuencia):
+    """
+    Función que busca el minimo de la secuencia
+    """
     i = 0
     i2 = 1
     minimo = secuencia[1]
@@ -31,6 +37,9 @@ def minimo(secuencia):
 
 
 def maximo(secuencia):
+    """
+    Función que busca el máximo de la secuencia
+    """
     i = 0
     i2 = 1
     maximo = secuencia[1]
@@ -45,6 +54,9 @@ def maximo(secuencia):
 
 
 def promedio(secuencia):
+    """
+    Función que calcula el promedio de la secuencia
+    """
     i = 0
     suma = int()
     while i < len(secuencia):
@@ -57,7 +69,8 @@ def promedio(secuencia):
 
 def principal():
     """
-    Docstring
+    Valor de entrada: int
+    Valor de salida: tuple
     """
     secuencia = cargador()
     print(secuencia)
