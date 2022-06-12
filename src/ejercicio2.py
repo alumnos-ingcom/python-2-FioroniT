@@ -3,7 +3,8 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 """
-Enunciado del ejercicio
+Implementar una función que obtenga los máximos, mínimos y promedio de una secuencia con números,
+retornando los valores como una tuple.
 """
 def cargador():
     """
@@ -66,11 +67,10 @@ def promedio(secuencia):
     return promedio   
 
 
-
 def principal():
     """
     Valor de entrada: int
-    Valor de salida: tuple
+    Valor de salida: tuple, str
     """
     secuencia = cargador()
     print(secuencia)
@@ -84,3 +84,4 @@ def principal():
 
 if __name__ == "__main__":
     principal()
+
