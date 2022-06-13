@@ -24,17 +24,16 @@ def minimo(secuencia):
     """
     Función que busca el minimo de la secuencia
     """
-    i = 0
-    i2 = 1
-    minimo = secuencia[1]
-    while i2 < len(secuencia):
-        if secuencia[i] < secuencia[i2]:
-            i2 += 1
-            minimo = secuencia[i]
+    j = 1
+    menor = secuencia[0]
+    fin = len(secuencia)
+    while j < fin:
+        if menor > secuencia[j]:
+            menor = secuencia[j]
         else:
-            i = i2
-            i2 += 1
-    return minimo
+            j += 1
+    return menor
+        
 
 
 def maximo(secuencia):
@@ -42,16 +41,16 @@ def maximo(secuencia):
     Función que busca el máximo de la secuencia
     """
     i = 0
-    i2 = 1
     maximo = secuencia[1]
-    while i2 < len(secuencia):
-        if secuencia[i] > secuencia[i2]:
-            i2 += 1
-            maximo = secuencia[i]
+    j = 1
+    mayor = secuencia[0]
+    fin = len(secuencia)
+    while j < fin:
+        if mayor < secuencia[j]:
+            mayor = secuencia[j]
         else:
-            i = i2
-            i2 += 1
-    return maximo
+            j += 1
+    return mayor
 
 
 def promedio(secuencia):
@@ -66,6 +65,11 @@ def promedio(secuencia):
     promedio = suma // len(secuencia)
     return promedio   
 
+def tupla(minimo_secuencia, maximo_secuencia, promedio_secuencia):
+    tupla = [minimo_secuencia, maximo_secuencia, promedio_secuencia]
+    resultado = tuple(tupla)
+    return resultado
+
 
 def principal():
     """
@@ -73,13 +77,14 @@ def principal():
     Valor de salida: tuple, str
     """
     secuencia = cargador()
-    print(secuencia)
     minimo_secuencia = minimo(secuencia)
     print(f"El minimo es {minimo_secuencia}")
     maximo_secuencia = maximo(secuencia)
     print(f"El máximo es {maximo_secuencia}")
     promedio_secuencia = promedio(secuencia)
     print(f"El promedio es {promedio_secuencia}")
+    resultado = tupla(minimo_secuencia, maximo_secuencia, promedio_secuencia)
+    print(resultado)
 
 
 if __name__ == "__main__":
