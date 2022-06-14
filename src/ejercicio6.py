@@ -26,10 +26,16 @@ def unicode_a_encriptado(texto):
     encriptado = []
     salida = ""
     while limite > 0:
-        caracter = chr(texto[i])
-        encriptado.append(caracter)
-        limite -= 1
-        i += 1
+         if simbolo.isupper():
+             if num > ord('Z'):
+                num -= 26
+            elif num < ord('A'):
+                num += 26
+            elif simbolo.islower():
+                if num > ord('z'):
+                    num -= 26
+                    elif num < ord('a'):
+                        num += 26
     print(salida.join(encriptado))
     return salida
     
@@ -40,7 +46,7 @@ def principal():
     Valor de entrada = str
     Valor de salida = str
     """
-    texto = input("Introduzca un texto a cifrar: ")
+    texto = input("Introduzca un texto a cifrar: ").lower()
     cantidad = int(input("Introduzca una cantidad de carácteres para cifrar: "))
     unicode = traduce_a_unicode(texto, cantidad)
     print(unicode)

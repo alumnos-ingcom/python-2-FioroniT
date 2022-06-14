@@ -20,7 +20,7 @@ def super_puestos(lista_1, lista_2):
             superposicion += 1
             i += 1
         else:
-            pass
+            i += 1
     return superposicion
             
 

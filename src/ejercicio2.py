@@ -35,13 +35,10 @@ def minimo(secuencia):
     return menor
         
 
-
 def maximo(secuencia):
     """
     Función que busca el máximo de la secuencia
     """
-    i = 0
-    maximo = secuencia[1]
     j = 1
     mayor = secuencia[0]
     fin = len(secuencia)
@@ -65,7 +62,8 @@ def promedio(secuencia):
     promedio = suma // len(secuencia)
     return promedio   
 
-def tupla(minimo_secuencia, maximo_secuencia, promedio_secuencia):
+
+def tuplador(minimo_secuencia, maximo_secuencia, promedio_secuencia):
     tupla = [minimo_secuencia, maximo_secuencia, promedio_secuencia]
     resultado = tuple(tupla)
     return resultado
@@ -74,16 +72,13 @@ def tupla(minimo_secuencia, maximo_secuencia, promedio_secuencia):
 def principal():
     """
     Valor de entrada: int
-    Valor de salida: tuple, str
+    Valor de salida: tuple
     """
     secuencia = cargador()
     minimo_secuencia = minimo(secuencia)
-    print(f"El minimo es {minimo_secuencia}")
     maximo_secuencia = maximo(secuencia)
-    print(f"El máximo es {maximo_secuencia}")
     promedio_secuencia = promedio(secuencia)
-    print(f"El promedio es {promedio_secuencia}")
-    resultado = tupla(minimo_secuencia, maximo_secuencia, promedio_secuencia)
+    resultado = tuplador(minimo_secuencia, maximo_secuencia, promedio_secuencia)
     print(resultado)
 
 
