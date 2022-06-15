@@ -15,30 +15,32 @@ def corchetes_balanceados(cadena):
     corchete_cerrado = "]"
     posicion_corchete_abierto = cadena.find(corchete_abierto)
     posicion_corchete_cerrado = cadena.find(corchete_cerrado)
-    lista_aux = list()
     contador_ca = 0
     contador_cc = 0
     j = posicion_corchete_abierto
-    if posicion_corchete_abierto < posicion_corchete_cerrado:
-        while i < len(cadena):
-            if cadena[i] == corchete_abierto:
-                contador_ca += 1
-                i += 1
+    if posicion_corchete_abierto == -1 and posicion_corchete_cerrado == -1:
+        balanceado = True
+    else:
+        if posicion_corchete_abierto < posicion_corchete_cerrado:
+            while i < len(cadena):
+                if cadena[i] == corchete_abierto:
+                    contador_ca += 1
+                    i += 1
+                else:
+                    i += 1
+                    continue
+            while j < len(cadena):
+                if cadena[j] == corchete_cerrado:
+                    contador_cc += 1
+                    j += 1
+                else:
+                    j += 1
+            if contador_ca == contador_cc:
+                balanceado = True
             else:
-                i += 1
-                continue
-        while j < len(cadena):
-            if cadena[j] == corchete_cerrado:
-                contador_cc += 1
-                j += 1
-            else:
-                j += 1
-        if contador_ca == contador_cc:
-            balanceado = True
+                balanceado = False
         else:
             balanceado = False
-    else:
-        balanceado = False
     return balanceado
 
 
