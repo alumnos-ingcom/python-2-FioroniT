@@ -27,7 +27,7 @@ def encriptador(texto, cantidad):
                    caracter = minimo
                 else:
                     continue
-        if texto[i].islower():
+        elif texto[i].islower():
             minimo = 97
             while caracter <= 122 and cantidad > 0:
                 caracter += 1
@@ -36,7 +36,7 @@ def encriptador(texto, cantidad):
                    caracter = minimo
                 else:
                     continue
-        if texto[i].isdigit():
+        elif texto[i].isdigit():
             minimo = 48
             while caracter <= 57 and cantidad > 0:
                 caracter += 1
@@ -45,6 +45,8 @@ def encriptador(texto, cantidad):
                    caracter = minimo
                 else:
                     continue
+        else:
+            pass
         limite -= 1
         i += 1
         cantidad = cantidad_original
