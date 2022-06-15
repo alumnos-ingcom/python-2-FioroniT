@@ -7,50 +7,78 @@ Implementar una funcion que codifique un texto rotandolo una cantidad de posicio
 
 Implementar la funcion que decodifique el texto rotado una cantidad de posiciones ajustable.
 """
-def traduce_a_unicode(texto, cantidad):
+def encriptador(texto, cantidad):
+    """
+    Función que encripta caracteres entre 'AZaz09'
+    Con la rotación deseada por el usuario
+    """
+    cantidad_original = cantidad
     limite = len(texto)
     i = 0
     unicode = []
     while limite > 0:
         caracter = ord(texto[i])
-        caracter_encriptado = caracter + cantidad
-        unicode.append(caracter_encriptado)
+        if texto[i].isupper():
+            minimo = 65
+            while caracter <= 90 and cantidad > 0:
+                caracter += 1
+                cantidad -= 1
+                if caracter > 90:
+                   caracter = minimo
+                else:
+                    continue
+        if texto[i].islower():
+            minimo = 97
+            while caracter <= 122 and cantidad > 0:
+                caracter += 1
+                cantidad -= 1
+                if caracter > 122:
+                   caracter = minimo
+                else:
+                    continue
+        if texto[i].isdigit():
+            minimo = 48
+            while caracter <= 57 and cantidad > 0:
+                caracter += 1
+                cantidad -= 1
+                if caracter > 57:
+                   caracter = minimo
+                else:
+                    continue
         limite -= 1
         i += 1
+        cantidad = cantidad_original
+        unicode.append(caracter)
     return unicode
 
 
-def unicode_a_encriptado(texto):
+def desencriptador(texto, unicode):
+    """
+    Función que desencripta el texto encriptado por el usuario
+    """
     limite = len(texto)
     i = 0
     encriptado = []
     salida = ""
     while limite > 0:
-         if simbolo.isupper():
-             if num > ord('Z'):
-                num -= 26
-            elif num < ord('A'):
-                num += 26
-            elif simbolo.islower():
-                if num > ord('z'):
-                    num -= 26
-                    elif num < ord('a'):
-                        num += 26
+        caracter = chr(unicode[i])
+        encriptado.append(caracter)
+        limite -= 1
+        i += 1
     print(salida.join(encriptado))
     return salida
-    
 
 
 def principal():
     """
     Valor de entrada = str
-    Valor de salida = str
+    Valor de salida = list, str
     """
-    texto = input("Introduzca un texto a cifrar: ").lower()
+    texto = input("Introduzca un texto a cifrar: ")
     cantidad = int(input("Introduzca una cantidad de carácteres para cifrar: "))
-    unicode = traduce_a_unicode(texto, cantidad)
+    unicode = encriptador(texto, cantidad)
     print(unicode)
-    print(unicode_a_encriptado(unicode))
+    print(desencriptador(texto, unicode))
 if __name__ == "__main__":
     principal()
 
