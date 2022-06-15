@@ -16,13 +16,14 @@ def fibonacci(n):
     contador = 0
     numero_1 = 0
     numero_2 = 1
-    assert n >= 1, "Este número no es un entero positivo mayor a 2."
+    #assert n >= 1, "Este número no es un entero positivo mayor a 2."
     while i <= n:
         contador = numero_1 + numero_2
         numero_1 = numero_2
         numero_2 = contador
         i += 1
-    assert contador >= 2, "Este número no es un entero positivo mayor a 2."
+    if contador < 2:
+        contador = 0
     return contador
         
 
