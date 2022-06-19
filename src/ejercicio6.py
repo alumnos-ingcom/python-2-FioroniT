@@ -23,7 +23,7 @@ def encriptador(texto, cantidad):
                 caracter += 1
                 cantidad -= 1
                 if caracter > 90:
-                   caracter = minimo
+                    caracter = minimo
                 else:
                     continue
         elif texto[i].islower():
@@ -32,7 +32,7 @@ def encriptador(texto, cantidad):
                 caracter += 1
                 cantidad -= 1
                 if caracter > 122:
-                   caracter = minimo
+                    caracter = minimo
                 else:
                     continue
         elif texto[i].isdigit():
@@ -41,7 +41,7 @@ def encriptador(texto, cantidad):
                 caracter += 1
                 cantidad -= 1
                 if caracter > 57:
-                   caracter = minimo
+                    caracter = minimo
                 else:
                     continue
         else:
@@ -55,7 +55,7 @@ def encriptador(texto, cantidad):
 
 def desencriptador(texto_encriptado, cantidad):
     """
-    Función que desencripta el mensaje en encriptado como str por el usuario
+    Función que desencripta el mensaje en una cadena
     """
     cantidad_original = cantidad
     limite = len(texto_encriptado)
