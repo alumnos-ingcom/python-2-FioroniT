@@ -53,17 +53,17 @@ def encriptador(texto, cantidad):
     return unicode
 
 
-def desencriptador(texto_encriptado, cantidad):
+def desencriptador(encriptado, cantidad):
     """
     Función que desencripta el mensaje en una cadena
     """
     cantidad_original = cantidad
-    limite = len(texto_encriptado)
+    limite = len(encriptado)
     i = 0
     desencriptado = []
     while limite > 0:
-        caracter = ord(texto_encriptado[i])
-        if texto_encriptado[i].isupper():
+        caracter = ord(encriptado[i])
+        if encriptado[i].isupper():
             maximo = 90
             while caracter >= 65 and cantidad > 0:
                 caracter -= 1
@@ -72,7 +72,7 @@ def desencriptador(texto_encriptado, cantidad):
                     caracter = maximo
                 else:
                     continue
-        elif texto_encriptado[i].islower():
+        elif encriptado[i].islower():
             maximo = 122
             while caracter >= 97 and cantidad > 0:
                 caracter -= 1
@@ -81,7 +81,7 @@ def desencriptador(texto_encriptado, cantidad):
                     caracter = maximo
                 else:
                     continue
-        elif texto_encriptado[i].isdigit():
+        elif encriptado[i].isdigit():
             maximo = 57
             while caracter >= 48 and cantidad > 0:
                 caracter -= 1

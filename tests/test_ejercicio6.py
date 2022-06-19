@@ -33,12 +33,11 @@ def test_desencriptador():
     """
     Test de la función desencriptadora
     """
-    texto = "Tomy Fioroni 11"
     cantidad = 13
-    texto_encriptado = [84, 111, 109, 121, 32, 70, 105, 111, 114, 111, 110, 105, 32, 49, 49]
-    resultado = desencriptador(texto_encriptado, cantidad)
-    assert isinstance(resultado, str), "El valor de salida de esta función debe ser una lista"
-    assert resultado == '', "La salida no es la esperada"
+    encriptado = "Gbzl Svbebav 44"
+    resultado = desencriptador(encriptado, cantidad)
+    assert isinstance(resultado, list), "El valor de salida de esta función debe ser una lista"
+    assert resultado == [84, 111, 109, 121, 32, 70, 105, 111, 114, 111, 110, 105, 32, 49, 49], "La salida no es la esperada"
 
 def test_traductor_encriptado():
     """
